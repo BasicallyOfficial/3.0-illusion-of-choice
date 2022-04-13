@@ -1,4 +1,4 @@
-# **3.0-illusion-of-choice**
+# **3.2-illusion-of-choice**
 
 ## **Project Timeline**
 
