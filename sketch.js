@@ -1,27 +1,50 @@
+let gameState = 'title';
 let playerD;
 let directionD;
 
 function setup() {
+  playerD = new player(300, 300, 5, 30);
   var canvas = createCanvas(600, 600);
   canvas.parent('sketch-holder');
-  playerD = new player(300, 300, 5, 30);
+  frameRate(60);
 }
 
 function draw() {
-  background(54, 122, 62);
-  //Render background and text
-
-  //Zone D movement functions
-  playerD.display();
-  playerD.move();
-  playerD.bound();
+  switch (gameState) {
+    case 'title':
+      Titlescreen();
+      break;
+    case 'stage1':
+      level1();
+      break;
+    case 'stage2':
+      level2();
+      break;
+    case 'stage3':
+      level3();
+      break;
+    case 'Tstage1':
+      text1();
+      break;
+    case 'stage4':
+      level4();
+      break;
+    case 'Tstage2':
+      text2();
+      break;
+    case 'stage5':
+      level5();
+      break;
+    case 'endstage':
+      Gameover();
+      break;
+  }
 }
 
 
 //handle keyboard inputs
 function keyPressed() {
   switch (key) {
-    //zone d controls
     case 'a':
       directionD = 'left';
       break;
@@ -37,7 +60,117 @@ function keyPressed() {
   }
 }
 
-//used only for zone d movement
+function Titlescreen() {
+  background(119, 133, 123);
+  noStroke();
+  fill(38, 64, 45);
+  textSize(55);
+  textAlign(CENTER);
+  text('The Illusion Of Choice', width * 0.5, height * 0.33);
+  textSize(30);
+  text('What Does It Mean To Have Free Will?', width * 0.5, height * 0.5)
+  text('You Will Press Enter', width * 0.5, height * 0.7)
+}
+
+function level1() {
+  background(54, 122, 62);
+  playerD.display();
+  playerD.move();
+  playerD.bound();
+  fill(156, 29, 0);
+  rect(100, 585, 100, 20);
+  fill(0, 98, 237);
+  rect(400, 585, 100, 20);
+  playerD.hitCheck1();
+}
+
+
+function level2() {
+  background(65, 94, 135);
+  playerD.display();
+  playerD.move();
+  playerD.bound();
+  fill(156, 29, 0);
+  rect(100, 585, 100, 20);
+  fill(0, 98, 237);
+  rect(400, 585, 100, 20);
+  playerD.hitCheck2();
+}
+
+function level3() {
+  background(207, 4, 222);
+  playerD.display();
+  playerD.move();
+  playerD.bound();
+  fill(156, 29, 0);
+  rect(100, 585, 100, 20);
+  fill(0, 98, 237);
+  rect(400, 585, 100, 20);
+  playerD.hitCheck3();
+}
+
+function text1() {
+  background(119, 133, 123);
+  noStroke();
+  fill(38, 64, 45);
+  textSize(55);
+  textAlign(CENTER);
+  text('Lorem Ipsum', width * 0.5, height * 0.33);
+  textSize(30);
+  text('Placeholder', width * 0.5, height * 0.5)
+  text('You Will Press Enter', width * 0.5, height * 0.7)
+}
+
+function level4() {
+  background(232, 240, 163);
+  playerD.display();
+  playerD.move();
+  playerD.bound();
+  fill(156, 29, 0);
+  rect(100, 585, 100, 20);
+  fill(0, 98, 237);
+  rect(400, 585, 100, 20);
+  playerD.hitCheck4();
+}
+
+function text2() {
+  background(119, 133, 123);
+  noStroke();
+  fill(38, 64, 45);
+  textSize(55);
+  textAlign(CENTER);
+  text('Lorem Ipsum X 2', width * 0.5, height * 0.33);
+  textSize(30);
+  text('Placeholder Again', width * 0.5, height * 0.5)
+  text('You Will Press Enter', width * 0.5, height * 0.7)
+}
+
+function level5() {
+  background(107, 19, 22);
+  playerD.display();
+  playerD.move();
+  playerD.bound();
+  fill(156, 29, 0);
+  rect(100, 585, 100, 20);
+  fill(0, 98, 237);
+  rect(400, 585, 100, 20);
+  playerD.hitCheck5();
+}
+
+function Gameover() {
+  background(119, 133, 123);
+  noStroke();
+  fill(38, 64, 45);
+  textSize(55);
+  textAlign(CENTER);
+  text('Ending Text', width * 0.5, height * 0.33);
+  textSize(30);
+  text('Philosophical Jargon', width * 0.5, height * 0.5)
+  text('Sequel Bait', width * 0.5, height * 0.7)
+  textSize(20);
+  text('Reset With Enter', width * 0.5, height * 0.9)
+}
+
 function keyReleased() {
   if (key == 'a') {
     if (directionD == 'left') {
@@ -46,14 +179,32 @@ function keyReleased() {
   } else if (key == 'd') {
     if (directionD == 'right') {
       directionD = 'still';
-}
-} else if (key == 'w') {
-      if (directionD == 'up') {
-        directionD = 'still';
+    }
+  } else if (key == 'w') {
+    if (directionD == 'up') {
+      directionD = 'still';
+    }
+  } else if (key == 's') {
+    if (directionD == 'down') {
+      directionD = 'still';
+    }
   }
-} else if (key == 's') {
-        if (directionD == 'down') {
-          directionD = 'still';
+
+  if (gameState === 'title') {
+    if (keyCode === ENTER) {
+      gameState = 'stage1';
+    }
+  } else if (gameState === 'endstage') {
+    if (keyCode === ENTER) {
+      gameState = 'title';
+    }
+  } else if (gameState === 'Tstage1') {
+    if (keyCode === ENTER) {
+      gameState = 'stage4';
+    }
+  } else if (gameState === 'Tstage2') {
+    if (keyCode === ENTER) {
+      gameState = 'stage5';
+    }
   }
-}
 }
