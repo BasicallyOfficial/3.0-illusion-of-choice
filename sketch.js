@@ -61,7 +61,10 @@ function keyPressed() {
 }
 
 function Titlescreen() {
-  background(119, 133, 123);
+  background(255, 255, 255);
+  strokeWeight(10);
+  noFill();
+  rect(0, 0, 600, 600);
   noStroke();
   fill(38, 64, 45);
   textSize(55);
@@ -73,7 +76,10 @@ function Titlescreen() {
 }
 
 function level1() {
-  background(54, 122, 62);
+  background(255, 255, 255);
+  strokeWeight(10);
+  noFill();
+  rect(0, 0, 600, 600);
   playerD.display();
   playerD.move();
   playerD.bound();
@@ -86,7 +92,10 @@ function level1() {
 
 
 function level2() {
-  background(65, 94, 135);
+  background(145, 194, 175);
+  strokeWeight(10);
+  noFill();
+  rect(0, 0, 600, 600);
   playerD.display();
   playerD.move();
   playerD.bound();
@@ -98,7 +107,10 @@ function level2() {
 }
 
 function level3() {
-  background(207, 4, 222);
+  background(162, 130, 179);
+  strokeWeight(10);
+  noFill();
+  rect(0, 0, 600, 600);
   playerD.display();
   playerD.move();
   playerD.bound();
@@ -110,7 +122,10 @@ function level3() {
 }
 
 function text1() {
-  background(119, 133, 123);
+  background(255, 255, 255);
+  strokeWeight(10);
+  noFill();
+  rect(0, 0, 600, 600);
   noStroke();
   fill(38, 64, 45);
   textSize(55);
@@ -123,6 +138,9 @@ function text1() {
 
 function level4() {
   background(232, 240, 163);
+  strokeWeight(10);
+  noFill();
+  rect(0, 0, 600, 600);
   playerD.display();
   playerD.move();
   playerD.bound();
@@ -134,7 +152,10 @@ function level4() {
 }
 
 function text2() {
-  background(119, 133, 123);
+  background(255, 255, 255);
+  strokeWeight(10);
+  noFill();
+  rect(0, 0, 600, 600);
   noStroke();
   fill(38, 64, 45);
   textSize(55);
@@ -146,7 +167,10 @@ function text2() {
 }
 
 function level5() {
-  background(107, 19, 22);
+  background(0);
+  strokeWeight(10);
+  noFill();
+  rect(0, 0, 600, 600);
   playerD.display();
   playerD.move();
   playerD.bound();
@@ -158,9 +182,12 @@ function level5() {
 }
 
 function Gameover() {
-  background(119, 133, 123);
+  background(0);
+  strokeWeight(10);
+  noFill();
+  rect(0, 0, 600, 600);
   noStroke();
-  fill(38, 64, 45);
+  fill(255, 255, 255);
   textSize(55);
   textAlign(CENTER);
   text('Ending Text', width * 0.5, height * 0.33);
