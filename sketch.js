@@ -2,6 +2,16 @@ let gameState = 'title';
 let playerD;
 let directionD;
 var scribble = new Scribble();
+var img1;
+var img2;
+var img3;
+
+function preload() {
+  // load image
+  img1 = loadImage("Assets/background01.png");
+  img2 = loadImage("Assets/background02.png");
+  img3 = loadImage("Assets/background03.png");
+}
 
 function setup() {
   playerD = new player(300, 300, 5, 30);
@@ -98,7 +108,8 @@ function level1() {
 
 
 function level2() {
-  background(179, 255, 191);
+  background(255, 255, 255);
+  image(img1, 0, 0);
   strokeWeight(10);
   noFill();
   rect(0, 0, 600, 600);
@@ -116,7 +127,8 @@ function level2() {
 }
 
 function level3() {
-  background(248, 189, 255);
+  background(255, 255, 255);
+  image(img2, 0, 0);
   strokeWeight(10);
   noFill();
   rect(0, 0, 600, 600);
@@ -151,7 +163,8 @@ function text1() {
 }
 
 function level4() {
-  background(232, 240, 163);
+  background(255, 255, 255);
+  image(img3, 0, 0);
   strokeWeight(10);
   noFill();
   rect(0, 0, 600, 600);
