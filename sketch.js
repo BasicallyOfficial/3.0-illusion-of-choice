@@ -1,6 +1,7 @@
 let gameState = 'title';
 let playerD;
 let directionD;
+var scribble = new Scribble();
 
 function setup() {
   playerD = new player(300, 300, 5, 30);
@@ -62,10 +63,12 @@ function keyPressed() {
 
 function Titlescreen() {
   background(255, 255, 255);
+  push();
   strokeWeight(10);
   noFill();
   rect(0, 0, 600, 600);
   noStroke();
+  pop();
   fill(38, 64, 45);
   textSize(55);
   textAlign(CENTER);
@@ -83,50 +86,61 @@ function level1() {
   playerD.display();
   playerD.move();
   playerD.bound();
-  fill(156, 29, 0);
-  rect(100, 585, 100, 20);
-  fill(0, 98, 237);
-  rect(400, 585, 100, 20);
+  push();
+  strokeWeight(25);
+  stroke(156, 29, 0);
+  scribble.scribbleRect(150, 600, 100, 20);
+  stroke(0, 98, 237);
+  scribble.scribbleRect(450, 600, 100, 20);
+  pop()
   playerD.hitCheck1();
 }
 
 
 function level2() {
-  background(145, 194, 175);
+  background(179, 255, 191);
   strokeWeight(10);
   noFill();
   rect(0, 0, 600, 600);
   playerD.display();
   playerD.move();
   playerD.bound();
-  fill(156, 29, 0);
-  rect(100, 585, 100, 20);
-  fill(0, 98, 237);
-  rect(400, 585, 100, 20);
+  push();
+  strokeWeight(25);
+  stroke(156, 29, 0);
+  scribble.scribbleRect(150, 600, 100, 20);
+  stroke(0, 98, 237);
+  scribble.scribbleRect(450, 600, 100, 20);
+  pop()
   playerD.hitCheck2();
 }
 
 function level3() {
-  background(162, 130, 179);
+  background(248, 189, 255);
   strokeWeight(10);
   noFill();
   rect(0, 0, 600, 600);
   playerD.display();
   playerD.move();
   playerD.bound();
-  fill(156, 29, 0);
-  rect(100, 585, 100, 20);
-  fill(0, 98, 237);
-  rect(400, 585, 100, 20);
+  push();
+  strokeWeight(25);
+  stroke(156, 29, 0);
+  scribble.scribbleRect(150, 600, 100, 20);
+  stroke(0, 98, 237);
+  scribble.scribbleRect(450, 600, 100, 20);
+  pop()
   playerD.hitCheck3();
 }
 
 function text1() {
+  push();
   background(255, 255, 255);
   strokeWeight(10);
   noFill();
   rect(0, 0, 600, 600);
   noStroke();
+  pop();
   fill(38, 64, 45);
   textSize(55);
   textAlign(CENTER);
@@ -144,19 +158,24 @@ function level4() {
   playerD.display();
   playerD.move();
   playerD.bound();
-  fill(156, 29, 0);
-  rect(100, 585, 100, 20);
-  fill(0, 98, 237);
-  rect(400, 585, 100, 20);
+  push();
+  strokeWeight(25);
+  stroke(156, 29, 0);
+  scribble.scribbleRect(150, 600, 100, 20);
+  stroke(0, 98, 237);
+  scribble.scribbleRect(450, 600, 100, 20);
+  pop()
   playerD.hitCheck4();
 }
 
 function text2() {
+  push();
   background(255, 255, 255);
   strokeWeight(10);
   noFill();
   rect(0, 0, 600, 600);
   noStroke();
+  pop();
   fill(38, 64, 45);
   textSize(55);
   textAlign(CENTER);
@@ -174,19 +193,24 @@ function level5() {
   playerD.display();
   playerD.move();
   playerD.bound();
-  fill(156, 29, 0);
-  rect(100, 585, 100, 20);
-  fill(0, 98, 237);
-  rect(400, 585, 100, 20);
+  push();
+  strokeWeight(25);
+  stroke(156, 29, 0);
+  scribble.scribbleRect(150, 600, 100, 20);
+  stroke(0, 98, 237);
+  scribble.scribbleRect(450, 600, 100, 20);
+  pop()
   playerD.hitCheck5();
 }
 
 function Gameover() {
   background(0);
+  push();
   strokeWeight(10);
   noFill();
   rect(0, 0, 600, 600);
   noStroke();
+  pop();
   fill(255, 255, 255);
   textSize(55);
   textAlign(CENTER);

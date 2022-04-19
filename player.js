@@ -17,9 +17,13 @@ class player {
 
   //draw player
   display() {
-    fill(235, 138, 35);
-    noStroke();
-    rect(this.xpos, this.ypos, this.size);
+    push()
+    stroke(235, 138, 35);
+    strokeWeight(5);
+    scribble.scribbleRect(this.xpos, this.ypos, this.size, this.size);
+      scribble.maxOffset = 2;
+      scribble.roughness = 1;
+      pop()
   }
 
   //move player, dependant on player zone
@@ -46,7 +50,7 @@ class player {
 
   bound() {
 
-    if (this.xpos > (width) - 50) {
+    if (this.xpos > (width) - 20) {
       this.xpos = this.xpos - 5;
     }
     if (this.xpos < 20) {
@@ -55,14 +59,14 @@ class player {
     if (this.ypos < 20) {
       this.ypos = this.ypos + 5;
     }
-    if (this.ypos > (height) - 40) {
+    if (this.ypos > (height) - 20) {
       this.ypos = this.ypos - 5;
     }
   }
 
   hitCheck1() {
     if (this.xpos > 100 && this.xpos < 200 || this.xpos > 400 && this.xpos < 500) {
-      if (this.ypos > 550) {
+      if (this.ypos > 575) {
         gameState = 'stage2';
         this.xpos = width / 2;
         this.ypos = height / 2;
@@ -72,7 +76,7 @@ class player {
 
   hitCheck2() {
     if (this.xpos > 100 && this.xpos < 200 || this.xpos > 400 && this.xpos < 500) {
-      if (this.ypos > 550) {
+      if (this.ypos > 575) {
         gameState = 'stage3';
         this.xpos = width / 2;
         this.ypos = height / 2;
@@ -82,7 +86,7 @@ class player {
 
   hitCheck3() {
     if (this.xpos > 100 && this.xpos < 200 || this.xpos > 400 && this.xpos < 500) {
-      if (this.ypos > 550) {
+      if (this.ypos > 575) {
         gameState = 'Tstage1';
         this.xpos = width / 2;
         this.ypos = height / 2;
@@ -92,7 +96,7 @@ class player {
 
   hitCheck4() {
     if (this.xpos > 100 && this.xpos < 200 || this.xpos > 400 && this.xpos < 500) {
-      if (this.ypos > 550) {
+      if (this.ypos > 575) {
         gameState = 'Tstage2';
         this.xpos = width / 2;
         this.ypos = height / 2;
@@ -102,7 +106,7 @@ class player {
 
   hitCheck5() {
     if (this.xpos > 100 && this.xpos < 200 || this.xpos > 400 && this.xpos < 500) {
-      if (this.ypos > 550) {
+      if (this.ypos > 575) {
         gameState = 'endstage';
         this.xpos = width / 2;
         this.ypos = height / 2;
