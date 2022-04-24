@@ -95,8 +95,38 @@ class player {
   }
 
   hitCheck4() {
-    if (this.xpos > 100 && this.xpos < 200 || this.xpos > 400 && this.xpos < 500) {
+    if (this.xpos > 50 && this.xpos < 150 || this.xpos > 250 && this.xpos < 350 || this.xpos > 450 && this.xpos < 550) {
       if (this.ypos > 575) {
+        gameState = 'Tstage2';
+        this.xpos = width / 2;
+        this.ypos = height / 2;
+      }
+    }
+  }
+
+  hitCheck41() {
+    if (this.xpos > 50 && this.xpos < 150 || this.xpos > 250 && this.xpos < 350 || this.xpos > 450 && this.xpos < 550) {
+      if (this.ypos < 25) {
+        gameState = 'Tstage2';
+        this.xpos = width / 2;
+        this.ypos = height / 2;
+      }
+    }
+  }
+
+  hitCheck42() {
+    if (this.ypos > 50 && this.ypos < 150 || this.ypos > 250 && this.ypos < 350 || this.ypos > 450 && this.ypos < 550) {
+      if (this.xpos < 25) {
+        gameState = 'Tstage2';
+        this.xpos = width / 2;
+        this.ypos = height / 2;
+      }
+    }
+  }
+
+  hitCheck43() {
+    if (this.ypos > 50 && this.ypos < 150 || this.ypos > 250 && this.ypos < 350 || this.ypos > 450 && this.ypos < 550) {
+      if (this.xpos > 575) {
         gameState = 'Tstage2';
         this.xpos = width / 2;
         this.ypos = height / 2;
