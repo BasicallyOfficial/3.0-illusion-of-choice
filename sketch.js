@@ -79,9 +79,9 @@ function Titlescreen() {
   rect(0, 0, 600, 600);
   noStroke();
   pop();
-  fill(38, 64, 45);
   textSize(55);
   textAlign(CENTER);
+  textFont('Comic Sans MS');
   text('The Illusion Of Choice', width * 0.5, height * 0.33);
   textSize(30);
   text('What Does It Mean To Have Free Will?', width * 0.5, height * 0.5)
@@ -190,7 +190,6 @@ function text1() {
   noStroke();
   pop();
   push()
-  fill(38, 64, 45);
   textSize(25);
   textAlign(CENTER);
   textStyle(BOLD);
@@ -267,13 +266,22 @@ function text2() {
   rect(0, 0, 600, 600);
   noStroke();
   pop();
-  fill(38, 64, 45);
-  textSize(55);
+  push();
+  textSize(23);
   textAlign(CENTER);
-  text('Lorem Ipsum X 2', width * 0.5, height * 0.33);
-  textSize(30);
-  text('Placeholder Again', width * 0.5, height * 0.5)
-  text('You Will Press Enter', width * 0.5, height * 0.7)
+  textStyle(BOLD);
+  textFont('Comic Sans MS');
+  text('Even if you spun a wheel or picked at random,', width * 0.5, height * 0.2);
+  textSize(20);
+  text('You were always going to walk through that door', width * 0.5, height * 0.3);
+  textSize(20);
+  text('Whether I prompt you or not', width * 0.5, height * 0.45);
+  textSize(23);
+  text('Your decision has already been made', width * 0.5, height * 0.63);
+    text('Before you know you have a choice', width * 0.5, height * 0.68);
+  textSize(35);
+  text('You Will Press Enter', width * 0.5, height * 0.85);
+  pop()
 }
 
 function level5() {
@@ -281,16 +289,15 @@ function level5() {
   push()
   strokeWeight(10);
   noFill();
-  rect(0, 0, 600, 600);
   pop()
   playerD.display();
   playerD.move();
   playerD.bound();
   push();
   strokeWeight(25);
-  stroke(156, 29, 0);
+  stroke(255, 255, 255);
   scribble.scribbleRect(150, 600, 100, 20);
-  stroke(0, 98, 237);
+  stroke(255, 255, 255);
   scribble.scribbleRect(450, 600, 100, 20);
   pop()
   playerD.hitCheck5();
@@ -304,15 +311,21 @@ function Gameover() {
   rect(0, 0, 600, 600);
   noStroke();
   pop();
+  push();
   fill(255, 255, 255);
-  textSize(55);
+  textSize(22);
   textAlign(CENTER);
-  text('Ending Text', width * 0.5, height * 0.33);
-  textSize(30);
-  text('Philosophical Jargon', width * 0.5, height * 0.5)
-  text('Sequel Bait', width * 0.5, height * 0.7)
+  textFont('Comic Sans MS');
+  text('Everything the future holds has already been decided', width * 0.5, height * 0.2);
+  text('Since the moment time began to turn', width * 0.5, height * 0.25);
+  textSize(25);
+  text('Fate is just the universe working like dominoes', width * 0.5, height * 0.45);
   textSize(20);
-  text('Reset With Enter', width * 0.5, height * 0.9)
+  text('With all of the pieces already set up', width * 0.5, height * 0.5);
+  text('Each domino not knowing when it was meant to fall', width * 0.5, height * 0.6);
+  textSize(35);
+  text('Try Again With Enter', width * 0.5, height * 0.85);
+  pop()
 }
 
 function keyReleased() {
