@@ -1,6 +1,6 @@
-# **3.2-illusion-of-choice**
+# **3.5-Illusion-of-Choice**
 
-This is my small game that attempts to exercise what it means to have free will. Asking the question of what free will is, and if it is something that we truly have control over.
+This is my first ever game, and it is a choose your own adventure game where you don't have any choices. It is an exercise in thinking about the concept of free will, and whether humans possess the capacity to make decisions that shape their future, or if fate is already predetermined. I used the p5js community library "Scribble" and photoshop to create the visual style and assets to give a deceivingly innocent and simple appearance. It is also inspired by other existential games such as The Stanley Parable from 2013.
 
 ## **Project Timeline**
 

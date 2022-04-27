@@ -129,9 +129,9 @@ function level2() {
   playerD.bound();
   push();
   strokeWeight(25);
-  stroke(156, 29, 0);
+  stroke(148, 148, 148);
   scribble.scribbleRect(150, 600, 100, 20);
-  stroke(0, 98, 237);
+  stroke(0);
   scribble.scribbleRect(450, 600, 100, 20);
   pop()
   push()
